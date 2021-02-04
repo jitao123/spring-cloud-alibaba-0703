@@ -1,0 +1,31 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: service-product
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloudshop?characterEncoding=utf8&useSSL=true&&serverTimezone=GMT%2B8
+    username: root
+    password: password
+#  jpa:
+#    properties:
+#      hibernate:
+#        hbm2ddl:
+#          auto: update
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+
+  jpa:
+    database: mysql
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+#        nacos的配置注册地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+service-product: # 调用提供者的名称
+  ribbon: # 固定写法
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

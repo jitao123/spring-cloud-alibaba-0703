@@ -19,7 +19,6 @@
       <module name="shop-order" options="-parameters" />
       <module name="shop-product" options="-parameters" />
       <module name="shop-user" options="-parameters" />
-      <module name="spring-cloud-alibaba-0703" options="-parameters" />
     </option>
   </component>
 </project>

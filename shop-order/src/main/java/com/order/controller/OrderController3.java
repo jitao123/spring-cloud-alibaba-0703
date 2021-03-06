@@ -3,6 +3,7 @@ package com.order.controller;
 import com.alibaba.fastjson.JSON;
 import com.common.domain.Order;
 import com.common.domain.Product;
+import com.google.common.util.concurrent.RateLimiter;
 import com.order.service.IOrderService;
 import com.order.service.IProductService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class OrderController3 {
 
+    // 每秒钟获取10个令牌 每秒放行10个请求
+    private RateLimiter rateLimiter=RateLimiter.create(10);
+
     @RequestMapping("/order/message1")
     public String testMessage1(){
         return "测试高并发";
@@ -29,5 +33,15 @@ public class OrderController3 {
     @RequestMapping("/order/message2")
     public String testMessage2(){
         return "测试高并发2";
+    }
+
+
+    @RequestMapping("/order/message2")
+    public String testMessage3(){
+        log.info("等待时间 ～～ "+rateLimiter.acquire());
+        System.out.println("处理业务～～～");
+
+
+        return "测试令牌桶";
     }
 }

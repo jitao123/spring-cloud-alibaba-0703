@@ -7,6 +7,7 @@ import com.order.service.IOrderService;
 import com.order.service.IProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +36,7 @@ public class OrderController2 {
         // 使用fegin 调用微服务
         Product product = productService.getProductByPid(pid);
 
+        if (ObjectUtils.isEmpty(product)) throw new RuntimeException("商品对象不能为空！");
         // 模拟调用需要2秒钟
         try {
             Thread.sleep(2000L);
@@ -64,6 +66,8 @@ public class OrderController2 {
 
     @RequestMapping("/order/message")
     public String testMessage(){
+
+
         return "测试高并发";
     }
 }

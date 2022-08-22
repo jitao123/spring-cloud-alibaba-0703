@@ -48,17 +48,19 @@
             <version>1.2.3</version>
         </dependency>
 
-        <dependency>
-            <groupId>javax.media</groupId>
-            <artifactId>jai-core</artifactId>
-            <version>1.1.3</version>
-        </dependency>
+<!--        该jar包无法从网上下载，从本地导入 shop-common 项目下的lib 包 -->
+<!--        <dependency>-->
+<!--            <groupId>javax.media</groupId>-->
+<!--            <artifactId>jai-core</artifactId>-->
+<!--            <version>1.1.3</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>com.sun</groupId>
-            <artifactId>jai_codec</artifactId>
-            <version>1.1.3</version>
-        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>com.sun</groupId>-->
+<!--            <artifactId>jai_codec</artifactId>-->
+<!--            <version>1.1.3</version>-->
+<!--        </dependency>-->
         <!--  使用   阿里巴巴simpleImage 图片操作需要的3个jar包   -->
 
         <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->

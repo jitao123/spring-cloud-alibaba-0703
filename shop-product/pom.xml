@@ -22,6 +22,13 @@
             <artifactId>shop-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!--  如果是spring的官方依赖 -->
+        <!--  spring-boot-starter-xxxx-->
+        <!--  如果不是spring的官方依赖 -->
+        <!--  xxxx-spring-boot-starter-->
+        <!--  如果是spring-cloud的依赖 -->
+        <!-- spring-cloud-starter-{子项目的名称}-[{模块名称}]-->
         <!--nacos客戸端-->
         <dependency>
         <groupId>com.alibaba.cloud</groupId>

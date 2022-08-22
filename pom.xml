@@ -13,6 +13,8 @@
         <module>shop-user</module>
         <module>shop-product</module>
         <module>shop-order</module>
+        <module>usercenter</module>
+        <module>contentcenter</module>
     </modules>
 
     <!--父工程-->
@@ -75,7 +77,10 @@
                 <artifactId>guava</artifactId>
                 <version>28.2-jre</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

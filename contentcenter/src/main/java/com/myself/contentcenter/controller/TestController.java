@@ -2,8 +2,10 @@ package com.myself.contentcenter.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,10 +18,8 @@ public class TestController {
     private final DiscoveryClient discoveryClient;
 
     @GetMapping("/test1")
-    public List<String> resultAllDiscovery(){
-        return this.discoveryClient.getServices();
+    public List<ServiceInstance> resultAllDiscovery(@RequestParam("serviceName") String serviceName){
+        List<String> services = this.discoveryClient.getServices();
+        return this.discoveryClient.getInstances(serviceName);
     }
-
-
-
 }

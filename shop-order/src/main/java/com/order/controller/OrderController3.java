@@ -1,14 +1,7 @@
 package com.order.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.common.domain.Order;
-import com.common.domain.Product;
 import com.google.common.util.concurrent.RateLimiter;
-import com.order.service.IOrderService;
-import com.order.service.IProductService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,7 +29,7 @@ public class OrderController3 {
     }
 
 
-    @RequestMapping("/order/message2")
+    @RequestMapping("/order/message3")
     public String testMessage3(){
         log.info("等待时间 ～～ "+rateLimiter.acquire());
         System.out.println("处理业务～～～");
